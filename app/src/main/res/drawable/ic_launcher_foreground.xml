@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:gravity="center"
+        android:height="66dp"
+        android:width="66dp"
+        android:drawable="@drawable/esm_crown_icon_1789796254904"/>
+</layer-list>

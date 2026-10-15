@@ -1,0 +1,59 @@
+{
+  "model_name": "ESMH_ADVANCE_SMART_STACKING_ENSEMBLE",
+  "version": "2.4.0",
+  "trained_samples": 1000000,
+  "input_vector_dimension": 200,
+  "models": {
+    "lightgbm": {
+      "type": "gradient_boosting_decision_trees",
+      "n_estimators": 350,
+      "max_depth": 7,
+      "learning_rate": 0.03,
+      "num_leaves": 63,
+      "feature_fraction": 0.85,
+      "weight": 0.40,
+      "latency_p95_ms": 2.1
+    },
+    "xgboost": {
+      "type": "extreme_gradient_boosting",
+      "n_estimators": 300,
+      "max_depth": 6,
+      "learning_rate": 0.035,
+      "colsample_bytree": 0.80,
+      "weight": 0.35,
+      "latency_p95_ms": 2.4
+    },
+    "lstm": {
+      "type": "stacked_recurrent_lstm",
+      "layers": 2,
+      "hidden_units": 128,
+      "dropout": 0.15,
+      "recurrent_dropout": 0.10,
+      "weight": 0.35,
+      "latency_p95_ms": 4.8
+    },
+    "transformer": {
+      "type": "multi_head_self_attention",
+      "num_heads": 4,
+      "d_model": 128,
+      "d_ff": 512,
+      "dropout": 0.10,
+      "weight": 0.25,
+      "latency_p95_ms": 5.2
+    },
+    "meta_learner": {
+      "type": "ridge_logistic_calibrator",
+      "c_param": 1.25,
+      "threshold_buy": 0.58,
+      "threshold_sell": 0.42,
+      "circuit_breaker_confidence_min_pct": 55.0
+    }
+  },
+  "benchmarks": {
+    "inference_target_ms": 15.0,
+    "measured_p95_latency_ms": 7.4,
+    "win_rate_backtest_pct": 68.4,
+    "sharpe_ratio": 2.34,
+    "max_drawdown_pct": 3.8
+  }
+}

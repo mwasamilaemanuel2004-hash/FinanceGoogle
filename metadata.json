@@ -1,0 +1,8 @@
+{
+  "name": "ESMH.TRADE",
+  "description": "ESMH.TRADE / MWAS AI: Quantitative intelligence, multi-market trading, and bot laboratory. Contact: estradingmachine@gmail.com | WhatsApp: +255625989646 / +255653712466. Includes Short-Term, Long-Term, and Ultra-Short Hyper-Velocity High Profit Modes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
